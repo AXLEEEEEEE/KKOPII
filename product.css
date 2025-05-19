@@ -1,0 +1,170 @@
+ /* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+header {
+  background-color: #4b2c20;
+  color: #fff;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+/* Logo container: image + text */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; /* spacing between logo image and text */
+}
+
+.logo-img {
+  width: 40px;  /* adjust size as needed */
+  height: auto;
+  border-radius: 5px; /* optional rounded corners */
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* Navigation */
+nav a {
+  color: #fff;
+  margin-left: 1rem;
+  text-decoration: none;
+  font-weight: 500;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+}
+
+nav a:hover,
+nav a.active {
+  background-color: #ffddaa;
+  color: #4b2c20;
+}
+
+main {
+  padding: 2rem;
+}
+
+.category {
+  margin-bottom: 3rem;
+}
+
+.category h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #4b2c20;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.large {
+  margin-top: 1.5rem;
+}
+
+.item {
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  flex: 1 1 180px;
+  max-width: 200px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.item:hover {
+  transform: translateY(-5px);
+}
+
+.item img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 0.5rem;
+}
+
+.item p {
+  font-weight: bold;
+  color: #4b2c20;
+}
+
+.extras-grid {
+  justify-content: center;
+}
+
+.extras-grid img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Footer */
+footer {
+  background-color: #4b2c20;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .grid {
+    justify-content: center;
+  }
+
+  .item {
+    flex: 1 1 45%;
+  }
+
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  nav {
+    margin-top: 0.5rem;
+  }
+
+  nav a {
+    display: inline-block;
+    margin: 0.5rem 1rem 0 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .item {
+    flex: 1 1 100%;
+  }
+
+  .extras-grid img {
+    max-width: 100%;
+  }
+
+  .category h2 {
+    font-size: 1.5rem;
+  }
+
+  .logo {
+    font-size: 1.2rem;
+  }
+}
