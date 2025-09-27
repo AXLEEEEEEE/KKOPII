@@ -1,0 +1,419 @@
+ /* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff8f0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== HEADER / NAVBAR ===== */
+.navbar {
+  background: linear-gradient(90deg, #4b2c20, #6d3f2a);
+  box-shadow: 0 3px 12px rgba(0,0,0,0.2);
+  padding: 0.5rem 1rem;
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff !important;
+  letter-spacing: 1px;
+}
+
+.logo-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #ffddaa;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo-img:hover {
+  transform: scale(1.15);
+  box-shadow: 0 0 15px #ffddaa;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  background-color: #ffddaa;
+  color: #4b2c20 !important;
+  transform: scale(1.08);
+}
+
+/* ===== MOBILE SIDEBAR / OFFCANVAS ===== */
+.offcanvas-start {
+  width: 250px; /* Sidebar width */
+  background-color: #fff8f0;
+  border-right: 2px solid #4b2c20;
+  box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+}
+
+.offcanvas-header {
+  border-bottom: 2px solid #ffddaa;
+  display: flex;
+  align-items: center;
+  padding: 1rem 1rem 0.5rem 1rem;
+}
+
+.offcanvas-header h5 {
+  margin-left: 0.5rem;
+  font-weight: 800;
+  color: #4b2c20;
+  font-size: 1.5rem;
+}
+
+.offcanvas .logo-img {
+  width: 50px;
+  height: 50px;
+  border: 2px solid #ffddaa;
+  border-radius: 50%;
+  object-fit: cover;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.offcanvas .logo-img:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 15px #ffddaa;
+}
+
+.offcanvas-body {
+  padding-top: 1rem;
+}
+
+.offcanvas-body .nav-link {
+  color: #4b2c20 !important;
+  font-weight: 600;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin-bottom: 0.4rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.offcanvas-body .nav-link:hover,
+.offcanvas-body .nav-link.active {
+  background-color: #ffddaa;
+  color: #4b2c20 !important;
+  transform: scale(1.05);
+}
+
+.offcanvas-body .nav-item + .nav-item {
+  margin-top: 0.3rem;
+}
+
+#checkoutBtn {
+  background-color: #ffddaa;
+  color: #4b2c20;
+  font-weight: 700;
+  padding: 0.5rem;
+  border-radius: 8px;
+  text-align: center;
+  display: block;
+  transition: transform 0.2s, background-color 0.3s;
+}
+
+#checkoutBtn:hover {
+  background-color: #f4a261;
+  transform: scale(1.05);
+}
+
+/* Adjust close button */
+.offcanvas-header .btn-close {
+  filter: invert(0.2);
+}
+
+/* ===== MAIN ===== */
+main {
+  padding: 2rem;
+}
+
+main h2 {
+  text-align: center;
+  font-size: 2.6rem;
+  margin-bottom: 3rem;
+  color: #4b2c20;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* ===== DRINK CATEGORIES ===== */
+.drink-category {
+  margin-bottom: 4rem;
+}
+
+.drink-category h3 {
+  font-size: 2rem;
+  margin-bottom: 1.8rem;
+  color: #4b2c20;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 8px;
+}
+
+/* Gradient underline */
+.drink-category h3::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 5px;
+  background: linear-gradient(90deg, #ffddaa, #f4a261);
+  border-radius: 2px;
+  transition: width 0.3s ease;
+}
+
+.drink-category h3:hover::after {
+  width: 120%;
+}
+
+/* ===== CARD GRID ===== */
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+/* ===== MENU CARDS ===== */
+.card {
+  border-radius: 15px;
+  border: none;
+  background: #fff;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 180px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 16px 32px rgba(0,0,0,0.2), 0 8px 16px rgba(0,0,0,0.1);
+}
+
+/* ===== FULL IMAGE STYLE ===== */
+.card img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-bottom: 2px solid #ffddaa;
+  transition: transform 0.4s ease, filter 0.3s ease;
+}
+
+.card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+/* Card text */
+.card-body {
+  padding: 0.8rem 0.5rem 1.5rem;
+}
+
+.card-body p {
+  margin: 0.3rem 0;
+  color: #4b2c20;
+  font-size: 0.95rem;
+}
+
+.card-body p.fw-bold {
+  font-size: 1rem;
+  font-weight: 700;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: linear-gradient(90deg, #4b2c20, #6d3f2a);
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  margin-top: 3rem;
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.15);
+}
+
+footer p {
+  margin: 0.3rem 0;
+}
+
+.copy {
+  font-size: 0.9rem;
+  margin-top: 1rem;
+  color: #ffddaa;
+  font-weight: 500;
+}
+
+/* ===== BUTTONS ===== */
+.btn-outline-secondary {
+  min-width: 32px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+}
+
+.btn-outline-secondary:hover {
+  background-color: #ffddaa;
+  color: #4b2c20;
+  transform: scale(1.1);
+}
+
+.btn-sm {
+  padding: 0.25rem 0.5rem;
+  border-radius: 5px;
+}
+
+/* ===== MODAL IMAGE CENTERING ===== */
+.modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+.modal-content {
+  background: #fff;
+  border-radius: 15px;
+  max-width: 90%;
+  max-height: 90%;
+  padding: 1rem;
+  overflow: auto;
+  text-align: left;
+}
+
+.modal-content img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+/* ===== SNACKS SECTION OVERRIDE ===== */
+.drink-category .card.product-card img {
+  width: 100%;
+  height: 180px;       /* uniform height for all snack images */
+  object-fit: cover;    /* cover ensures no gaps */
+  border-bottom: 2px solid #ffddaa;
+}
+
+.drink-category .card.product-card:hover img {
+  transform: scale(1.05);
+  filter: brightness(1.05);
+}
+
+.drink-category .card-body {
+  padding: 0.8rem 0.5rem 1rem;
+  text-align: center;
+}
+
+.drink-category .card-body p {
+  margin: 0.2rem 0;
+  color: #4b2c20;
+}
+
+.drink-category .card-body p.fw-bold {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 1200px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 1.3rem;
+  }
+}
+
+@media (max-width: 992px) {
+  .card-container {
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  main {
+    padding: 1.5rem;
+  }
+
+  main h2 {
+    font-size: 2rem;
+  }
+
+  .drink-category h3 {
+    font-size: 1.6rem;
+  }
+
+  .card {
+    max-width: 150px;
+  }
+
+  .drink-category .card.product-card img {
+    height: 150px; /* responsive snack images */
+  }
+}
+
+@media (max-width: 576px) {
+  .card-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  main {
+    padding: 1rem;
+  }
+
+  main h2 {
+    font-size: 1.5rem;
+  }
+
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  .logo-img {
+    width: 35px;
+    height: 35px;
+  }
+
+  .card {
+    max-width: 130px;
+  }
+
+  .drink-category .card.product-card img {
+    height: 130px; /* responsive snack images */
+  }
+
+  .card-body p {
+    font-size: 0.85rem;
+  }
+
+  .card-body p.fw-bold {
+    font-size: 0.95rem;
+  }
+}
